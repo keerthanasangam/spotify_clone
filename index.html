@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spotify Clone - Your Music Streaming Platform">
+    <title>Spotify Clone - Find Music & Podcasts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- ===== LANDING PAGE ===== -->
+    <div id="landingPage" class="page">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <i class="fas fa-music"></i>
+                    <span>Spotify Clone</span>
+                </div>
+                <div class="navbar-buttons">
+                    <button class="nav-btn" onclick="showLoginPage()">Log In</button>
+                    <button class="nav-btn btn-primary" onclick="showSignupPage()">Sign Up</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="highlight">Your Music,</span>
+                    <span>Your Way</span>
+                </h1>
+                <p class="hero-subtitle">Stream millions of songs, create unlimited playlists, and discover new music every day.</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-large" onclick="showSignupPage()">
+                        <i class="fas fa-play-circle"></i> Start Listening Now
+                    </button>
+                    <button class="btn btn-large btn-outline" onclick="showLoginPage()">
+                        <i class="fas fa-arrow-right"></i> Login
+                    </button>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <h3>70M+</h3>
+                        <p>Songs</p>
+                    </div>
+                    <div class="stat">
+                        <h3>30K+</h3>
+                        <p>Podcasts</p>
+                    </div>
+                    <div class="stat">
+                        <h3>365M+</h3>
+                        <p>Users</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="music-animation">
+                    <div class="bar bar-1"></div>
+                    <div class="bar bar-2"></div>
+                    <div class="bar bar-3"></div>
+                    <div class="bar bar-4"></div>
+                    <div class="bar bar-5"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2 class="section-title">Why Choose Spotify Clone?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3>Ad-Free Music</h3>
+                    <p>Listen to your favorite tracks without any interruptions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Offline Listening</h3>
+                    <p>Download songs and listen anywhere, anytime</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Share & Collaborate</h3>
+                    <p>Create playlists and share them with friends instantly</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Personalized Playlists</h3>
+                    <p>Discover songs tailored to your unique taste</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Podcasts & More</h3>
+                    <p>Explore exclusive content from top creators</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Music Library</h3>
+                    <p>Access music from artists all around the world</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing">
+            <h2 class="section-title">Plans for Every Listener</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <p class="price">Free Forever</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Ad-supported listening</li>
+                        <li><i class="fas fa-check"></i> Standard quality</li>
+                        <li><i class="fas fa-check"></i> Create playlists</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Offline downloads</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="showSignupPage()">Get Started</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="badge">Popular</div>
+                    <h3>Premium</h3>
+                    <p class="price">$10.99<span>/month</span></p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Ad-free listening</li>
+                        <li><i class="fas fa-check"></i> High quality audio</li>
+                        <li><i class="fas fa-check"></i> Offline downloads</li>
+                        <li><i class="fas fa-check"></i> Skip unlimited songs</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="handlePremiumTrialClick()">Start Free Trial</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Family</h3>
+                    <p class="price">$15.99<span>/month</span></p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Up to 6 accounts</li>
+                        <li><i class="fas fa-check"></i> Ad-free listening</li>
+                        <li><i class="fas fa-check"></i> Offline downloads</li>
+                        <li><i class="fas fa-check"></i> Family Mix playlist</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="handleFamilyPlanClick()">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">For Artists</a></li>
+                        <li><a href="#">Creators</a></li>
+                        <li><a href="#">Developers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Spotify Clone. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Modal for Login & Signup -->
+        <div id="authModal" class="modal">
+            <div class="modal-content modal-auth">
+                <button class="close-btn" onclick="closeAuthModal()">&times;</button>
+                
+                <!-- Login Form -->
+                <div id="loginForm" class="auth-form show">
+                    <h2>Welcome Back</h2>
+                    <p class="auth-subtitle">Log in to your Spotify Clone account</p>
+                    
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox"> Remember me
+                            </label>
+                            <a href="#" class="forgot-password">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                    </form>
+                    
+                    <div class="divider">OR</div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="social-btn google">
+                            <i class="fab fa-google"></i> Login with Google
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            <i class="fab fa-facebook"></i> Login with Facebook
+                        </button>
+                    </div>
+                    
+                    <p class="auth-toggle">Don't have an account? <a href="#" onclick="switchToSignup()">Sign up here</a></p>
+                </div>
+
+                <!-- Signup Form -->
+                <div id="signupForm" class="auth-form">
+                    <h2>Create Your Account</h2>
+                    <p class="auth-subtitle">Join millions of music lovers today</p>
+                    
+                    <form onsubmit="handleSignup(event)">
+                        <div class="form-group">
+                            <label for="signup-name">Full Name</label>
+                            <input type="text" id="signup-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-email">Email</label>
+                            <input type="email" id="signup-email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <input type="password" id="signup-password" placeholder="At least 8 characters" minlength="8" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-confirm">Confirm Password</label>
+                            <input type="password" id="signup-confirm" placeholder="Confirm your password" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" required> I agree to the Terms of Service
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                    </form>
+                    
+                    <div class="divider">OR</div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="social-btn google">
+                            <i class="fab fa-google"></i> Sign up with Google
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            <i class="fab fa-facebook"></i> Sign up with Facebook
+                        </button>
+                    </div>
+                    
+                    <p class="auth-toggle">Already have an account? <a href="#" onclick="switchToLogin()">Log in here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MUSIC PLAYER APP ===== -->
+    <div id="appPage" class="page" style="display: none;">
+        <div class="main">
+            <div class="sidebar">
+                <div class="nav">
+                    <div class="nav-option nav-option-active" data-nav="home">
+                         <i class="fa-solid fa-house"></i>
+                         <a href="#">Home</a>
+                    </div>
+                    
+                    <div class="nav-option" data-nav="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <a href="#">Search</a>
+                    </div>
+                </div>
+
+                <div class="library"> 
+                    <div class="options">
+                         <div class="lib-option nav-option">
+                            <i class="fa-solid fa-list"></i>
+                            <a href="#">Your Library</a>
+                          </div>
+                          <div class="icons">
+                            <i class="fa-solid fa-plus" title="Create new"></i> 
+                             <i class="fa-solid fa-arrow-right" title="More options"></i>
+                          </div>
+                    </div> 
+                    <div class="lib-box">
+                        <div class="box">
+                            <p class="box-p1">Create your first playlist</p> 
+                            <p class="box-p2">It's easy, we'll help you</p>
+                            <button class="badge" type="button" data-action="create-playlist">Create playlist</button>
+                        </div>
+                         <div class="box">
+                            <p class="box-p1">Let's find some podcasts to follow</p>
+                            <p class="box-p2">We'll keep you updated on new episodes</p>
+                            <button class="badge" type="button" data-action="browse-podcasts">Browse podcasts</button>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="main-content">
+                <div class="sticky-nav">
+                    <div class="nav-icons">
+                         <img src="https://img.icons8.com/color/96/000000/skip-to-start.png" alt="backward" class="hide" data-action="backward" title="Rewind 10s" style="width: 24px; height: 24px;">
+                         <img src="https://img.icons8.com/color/96/000000/skip-to-end.png" class="hide" data-action="forward" alt="forward" title="Forward 10s" style="width: 24px; height: 24px;">
+                    </div>
+                   <div class="sticky-nav-options">
+                      <button class="badge nav-item hide" type="button" data-action="premium">Explore Premium</button>
+                    <button class="badge nav-item dark-badge" type="button" data-action="install"><i class="fa-solid fa-circle-down"></i>Install App</button>
+                  <!--  user icon   -->
+                    <i class="fa-solid fa-user nav-item" aria-label="User profile" data-action="user"></i>
+                   </div>
+                </div>
+
+                <h2>Recently Played</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300&q=80" class="card-img" alt="Blinding Lights">
+                        <p class="card-title">Blinding Lights</p>
+                        <p class="card-info">The Weeknd - Latest Hits</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&q=80" class="card-img" alt="Levitating">
+                        <p class="card-title">Levitating</p>
+                        <p class="card-info">Dua Lipa - Dance Hits</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&q=80" class="card-img" alt="Anti-Hero">
+                        <p class="card-title">Anti-Hero</p>
+                        <p class="card-info">Taylor Swift - Trending Now</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=300&q=80" class="card-img" alt="Flowers">
+                        <p class="card-title">Flowers</p>
+                        <p class="card-info">Miley Cyrus - Pop Sensation</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=300&q=80" class="card-img" alt="Shape of You">
+                        <p class="card-title">Shape of You</p>
+                        <p class="card-info">Ed Sheeran - All Time Favorite</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=300&q=80" class="card-img" alt="Bohemian Rhapsody">
+                        <p class="card-title">Bohemian Rhapsody</p>
+                        <p class="card-info">Queen - Classic Rock</p>
+                    </div>
+                </div>
+
+                <h2>Trending now near you</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&q=80" class="card-img" alt="Espresso">
+                        <p class="card-title">Espresso</p>
+                        <p class="card-info">Sabrina Carpenter - Viral Hit</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300&q=80" class="card-img" alt="Cruel Summer">
+                        <p class="card-title">Cruel Summer</p>
+                        <p class="card-info">Olivia Rodrigo - Pop Chart Topper</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&q=80" class="card-img" alt="Vampire">
+                        <p class="card-title">Vampire</p>
+                        <p class="card-info">Olivia Rodrigo - Dark Pop</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=300&q=80" class="card-img" alt="Beautiful Things">
+                        <p class="card-title">Beautiful Things</p>
+                        <p class="card-info">Benson Boone - Emotional Ballad</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=300&q=80" class="card-img" alt="Pink + White">
+                        <p class="card-title">Pink + White</p>
+                        <p class="card-info">Frank Ocean - Modern Classic</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=300&q=80" class="card-img" alt="Uptown Funk">
+                        <p class="card-title">Uptown Funk</p>
+                        <p class="card-info">Mark Ronson ft. Bruno Mars</p>
+                    </div>
+                </div>
+
+                <h2>Featured Charts</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300&q=80" class="card-img" alt="Heat Waves">
+                        <p class="card-title">Heat Waves</p>
+                        <p class="card-info">Glass Animals - Indie Pop</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&q=80" class="card-img" alt="Good as Hell">
+                        <p class="card-title">Good as Hell</p>
+                        <p class="card-info">Lizzo - Feel Good Anthem</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&q=80" class="card-img" alt="Starboy">
+                        <p class="card-title">Starboy</p>
+                        <p class="card-info">The Weeknd ft. Daft Punk</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=300&q=80" class="card-img" alt="Kill Bill">
+                        <p class="card-title">Kill Bill</p>
+                        <p class="card-info">SZA - R&B Hit</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=300&q=80" class="card-img" alt="Industry Baby">
+                        <p class="card-title">Industry Baby</p>
+                        <p class="card-info">Lil Nas X - Hip Hop Anthem</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=300&q=80" class="card-img" alt="Watermelon Sugar">
+                        <p class="card-title">Watermelon Sugar</p>
+                        <p class="card-info">Harry Styles - Summer Vibes</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300&q=80" class="card-img" alt="drivers license">
+                        <p class="card-title">drivers license</p>
+                        <p class="card-info">Olivia Rodrigo - Heartbreak Song</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&q=80" class="card-img" alt="Bad Habits">
+                        <p class="card-title">Bad Habits</p>
+                        <p class="card-info">Ed Sheeran - Latest Single</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&q=80" class="card-img" alt="As It Was">
+                        <p class="card-title">As It Was</p>
+                        <p class="card-info">Harry Styles - Chart Buster</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=300&q=80" class="card-img" alt="Unholy">
+                        <p class="card-title">Unholy</p>
+                        <p class="card-info">Sam Smith & Kim Petras</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=300&q=80" class="card-img" alt="SNOOZE">
+                        <p class="card-title">SNOOZE</p>
+                        <p class="card-info">SZA - Smooth R&B</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=300&q=80" class="card-img" alt="Break My Soul">
+                        <p class="card-title">Break My Soul</p>
+                        <p class="card-info">Beyoncé - Dance Track</p>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="line"></div>
+                </div>
+            </div>
+            <!-- Footer music player -->
+             <div class="music-player">
+                <div class="album"></div>
+                <div class="player">
+                    <div class="player-controls">
+                        <i class="fa-solid fa-shuffle player-control-icon" data-action="shuffle" title="Shuffle"></i>
+                        <i class="fa-solid fa-step-backward player-control-icon" data-action="prev" title="Previous"></i>
+                        <i class="fa-solid fa-circle-play player-control-icon player-control-active" data-action="play-pause" title="Play/Pause" style="font-size: 2.5rem;"></i>
+                        <i class="fa-solid fa-step-forward player-control-icon" data-action="next" title="Next"></i>
+                        <i class="fa-solid fa-repeat player-control-icon" data-action="repeat" title="Repeat"></i>
+                    </div>
+                     <div class="play-bar">
+                        <span class="curr-time">00:00</span>
+                        <input type="range" min="0" max="100" class="progress-bar" step="1" value="0">
+                        <span class="tot-time">3:33</span>
+                     </div>
+                </div>
+                <div class="controls">
+                    <i class="fa-solid fa-volume-high" style="margin-right: 0.5rem; opacity: 0.7;"></i>
+                    <input type="range" min="0" max="100" class="volume-bar" style="width: 100px; cursor: pointer;" value="100">
+                </div>
+             </div>
+        </div>
+    </div>
+</body>
+</html>
