@@ -357,7 +357,7 @@ body {
     box-shadow: 0 20px 40px rgba(29, 185, 84, 0.2);
 }
 
-.badge {
+.pricing-card .badge {
     position: absolute;
     top: -12px;
     left: 20px;
@@ -503,13 +503,13 @@ body {
 }
 
 .modal-content {
-    background: linear-gradient(135deg, rgba(48, 43, 99, 0.95), rgba(36, 36, 62, 0.95));
+    background: linear-gradient(135deg, rgba(48, 43, 99, 0.98), rgba(36, 36, 62, 0.98));
     padding: 3rem;
     border-radius: 1.5rem;
     width: 90%;
     max-width: 450px;
-    border: 1px solid rgba(29, 185, 84, 0.2);
-    box-shadow: 0 20px 60px rgba(29, 185, 84, 0.3);
+    border: 2px solid #1bd760;
+    box-shadow: 0 0 40px rgba(29, 185, 84, 0.5), 0 20px 60px rgba(0, 0, 0, 0.5);
     animation: slideUp 0.3s ease;
     max-height: 90vh;
     overflow-y: auto;
@@ -523,11 +523,22 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    line-height: 1;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-top: -0.5rem;
 }
 
 .close-btn:hover {
     color: #fff;
+    background: rgba(29, 185, 84, 0.2);
+    transform: scale(1.1);
 }
 
 .auth-form {
@@ -704,87 +715,63 @@ body {
 .main {
     display: flex;
     height: 100vh;
-    padding: 0.5rem;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    padding: 0;
+    background: #000;
+    overflow: hidden;
 }
 
 .sidebar {
     background-color: #000;
-    width: 340px;
-    border-radius: 1rem;
-    margin-right: 0.5rem;
+    width: 280px;
+    border-radius: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full screen height including behind player */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Content behind player */
+    padding-bottom: 90px;
 }
 
 .main-content {
-    background-color: #121212;
-    flex: 1;
-    border-radius: 1rem;
-    overflow: auto;
-    padding: 0 1.5rem 0 1.5rem;
-}
-
-.music-player {
-    background-color: #121212;
-    position: fixed;
+    background: linear-gradient(to bottom, #2d2665 0%, #121212 40%, #121212 100%);
+    border-radius: 0;
+    overflow-y: auto;
+    padding: 0 1.5rem 120px 1.5rem;
+    height: 100vh !important; /* Force full height */
+    position: fixed !important;
+    left: 280px;
+    top: 0;
+    right: 0;
     bottom: 0;
-    width: 100%;
-    height: 72px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-}
-
-a {
-    text-decoration: none;
-    color: #fff;
+    width: auto !important; /* Takes remaining width */
+    z-index: 1;
 }
 
 /* ============================================
    NAV & LIBRARY
    ============================================ */
 
-.nav {
-    background-color: #121212;
-    border-radius: 1rem;
+.nav{
+    background-color: transparent; /* Updated for new layout */
+    border-radius: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100px;
+    flex-shrink: 0;
     padding: 0.5rem 0.75rem;
 }
 
-.nav-option {
-    line-height: 2.5rem;
-    opacity: 0.7;
-    padding: 0.5rem 0.75rem;
-    transition: opacity 0.3s ease;
-    cursor: pointer;
-}
-
-.nav-option:hover {
-    opacity: 1;
-}
-
-.nav-option-active {
-    opacity: 1;
-}
-
-.nav-option i {
-    font-size: 1.25rem;
-}
-
-.nav-option a {
-    font-size: 1rem;
-    margin-left: 1rem;
-}
-
-.library {
-    background-color: #121212;
-    border-radius: 1rem;
-    height: 100%;
+.library{
+    background-color: transparent; /* Updated for new layout */ 
+    border-radius: 0;
+    flex-grow: 1; 
     margin-top: 0.5rem;
     padding: 0.5rem 0.75rem;
+    overflow-y: auto; 
 }
 
 .options {
@@ -816,10 +803,15 @@ a {
 
 .box {
     background-color: #232323;
-    height: 8rem;
+    height: auto;
+    min-height: 8rem;
     border-radius: 0.75rem;
     margin: 0.75rem 0 1.75rem 0;
-    padding: 0.7rem 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
 }
 
 .box-p1 {
@@ -834,37 +826,57 @@ a {
 
 .badge {
     background-color: #fff;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 100px;
-    padding: 0.25rem 1rem;
+    padding: 0.5rem 1.2rem;
     font-weight: 700;
-    height: 2rem;
-    width: fit-content;
+    height: auto;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s ease;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    color: #000;
+    box-shadow: 0 4px 12px rgba(29, 185, 84, 0.2);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    gap: 0.5rem;
 }
 
 .badge:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(29, 185, 84, 0.4);
+    background: #1bd760;
+    color: #000;
 }
 
 .dark-badge {
-    background-color: #000;
-    color: #fff;
+    background-color: #1a1a1a;
+    color: #1bd760;
+    border: 2px solid #1bd760;
 }
 
 .dark-badge:hover {
-    background-color: #1a1a1a;
+    background-color: #1bd760;
+    color: #000;
+    border-color: #1bd760;
 }
 
 .sticky-nav {
     position: sticky;
     top: 0;
-    background-color: #121212;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 0; /* Align with content */
+    gap: 2rem;
+    min-height: 70px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 10;
 }
 
 .nav-icons {
@@ -875,12 +887,24 @@ a {
 
 .sticky-nav-options {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-end;
     align-items: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.sticky-nav-options .badge {
+    white-space: nowrap;
+    margin: 0;
+}
+
+.sticky-nav-options i {
+    margin-left: 0.5rem;
 }
 
 .nav-item {
-    margin-right: 1.5rem;
+    margin-right: 0;
     transition: opacity 0.3s ease;
     cursor: pointer;
 }
@@ -896,14 +920,12 @@ a {
 }
 
 .card {
-    background-color: #232323;
-    width: 150px;
+    background-color: #181818;
+    width: 220px;
     border-radius: 0.5rem;
-    margin-left: 1.5rem;
-    margin-top: 1rem;
     padding: 1rem;
-    transition: background-color 0.3s, transform 0.3s ease;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .card:hover {
@@ -914,6 +936,8 @@ a {
 .cards-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 .card-img {
@@ -942,17 +966,22 @@ a {
 }
 
 .footer {
-    height: 300px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top: 2px solid rgba(29, 185, 84, 0.2);
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: linear-gradient(to bottom, transparent, rgba(29, 185, 84, 0.05));
 }
 
-.line {
-    width: 90%;
-    height: 30%;
-    border-top: 1px solid white;
-    opacity: 0.4;
+.footer-credit {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    padding: 1rem;
+    line-height: 1.6;
 }
 
 .album {
@@ -975,23 +1004,27 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .player-control-icon {
-    height: 1rem;
-    margin-right: 1.75rem;
+    font-size: 1.25rem;
+    margin: 0 0.8rem;
     opacity: 0.7;
     transition: opacity 0.3s ease;
     cursor: pointer;
-}
-
-.player-control-icon:hover {
-    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .player-control-active {
     opacity: 1;
-    height: 2rem;
+    font-size: 2.5rem !important; /* Forces play button to be bigger */
+    margin: 0 1rem;
+    height: auto !important; /* Ensure height isn't restricted */
+    width: auto !important; /* Ensure width isn't restricted */
+    display: inline-flex !important; /* Ensure it's not hidden */
 }
 
 .play-bar {
@@ -1243,19 +1276,11 @@ a {
     }
 }
 
-::-webkit-scrollbar {
-    width: 8px;
+.main-content::-webkit-scrollbar {
+    width: 6px;
 }
 
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #404040;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #535353;
+.main-content::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
 }

@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,23 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-=======
- <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify-Web Player:Music for everyone</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="./assests/logo.png">
-    <link rel="stylesheet" href="spotifyclone.css">
->>>>>>> 92eed5275809dbdc209cb483ad4ad7915ccb1ce5
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-<<<<<<< HEAD
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
@@ -359,10 +345,11 @@
                          <img src="https://img.icons8.com/color/96/000000/skip-to-end.png" class="hide" data-action="forward" alt="forward" title="Forward 10s" style="width: 24px; height: 24px;">
                     </div>
                    <div class="sticky-nav-options">
-                      <button class="badge nav-item hide" type="button" data-action="premium">Explore Premium</button>
-                    <button class="badge nav-item dark-badge" type="button" data-action="install"><i class="fa-solid fa-circle-down"></i>Install App</button>
+                      <button class="badge nav-item" type="button" data-action="premium">Explore Premium</button>
+                    <button class="badge nav-item dark-badge" type="button" data-action="install"><i class="fa-solid fa-circle-down"></i> Install App</button>
+                    <button class="badge nav-item dark-badge" type="button" onclick="logout()">Logout</button>
                   <!--  user icon   -->
-                    <i class="fa-solid fa-user nav-item" aria-label="User profile" data-action="user"></i>
+                    <i class="fa-solid fa-user nav-item" aria-label="User profile" data-action="user" style="font-size: 1.5rem; cursor: pointer;"></i>
                    </div>
                 </div>
 
@@ -498,7 +485,10 @@
                     </div>
                 </div>
                 <div class="footer">
-                    <div class="line"></div>
+                    <div class="footer-credit">
+                        <p>&copy; 2026 Spotify Clone. All rights reserved.</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Made with <span style="color: #1bd760;">♥</span> for music lovers</p>
+                    </div>
                 </div>
             </div>
             <!-- Footer music player -->
@@ -508,7 +498,7 @@
                     <div class="player-controls">
                         <i class="fa-solid fa-shuffle player-control-icon" data-action="shuffle" title="Shuffle"></i>
                         <i class="fa-solid fa-step-backward player-control-icon" data-action="prev" title="Previous"></i>
-                        <i class="fa-solid fa-circle-play player-control-icon player-control-active" data-action="play-pause" title="Play/Pause" style="font-size: 2.5rem;"></i>
+                        <i class="fa-solid fa-circle-play player-control-icon player-control-active" data-action="play-pause" title="Play/Pause"></i>
                         <i class="fa-solid fa-step-forward player-control-icon" data-action="next" title="Next"></i>
                         <i class="fa-solid fa-repeat player-control-icon" data-action="repeat" title="Repeat"></i>
                     </div>
