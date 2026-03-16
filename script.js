@@ -846,6 +846,7 @@ function createModal(options) {
     
     const modalBox = document.createElement('div');
     modalBox.style.cssText = `
+        position: relative;
         background-color: #282828;
         border-radius: 1rem;
         padding: 2rem;
@@ -855,6 +856,24 @@ function createModal(options) {
         overflow-y: auto;
         animation: slideUp 0.3s ease;
     `;
+
+    const closeBtn = document.createElement('span');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.style.cssText = `
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #b3b3b3;
+    `;
+    closeBtn.onclick = () => {
+        modalOverlay.style.animation = 'fadeIn 0.3s ease reverse';
+        setTimeout(() => modalOverlay.remove(), 300);
+    };
+    closeBtn.onmouseover = () => closeBtn.style.color = '#fff';
+    closeBtn.onmouseout = () => closeBtn.style.color = '#b3b3b3';
+    modalBox.appendChild(closeBtn);
     
     const titleEl = document.createElement('h2');
     titleEl.textContent = title;
